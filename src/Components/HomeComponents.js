@@ -23,6 +23,8 @@ class HomeComponents extends Component {
     render() {
         // console.log("products",this.state.products)
 
+        console.log("env file",process.env.REACT_APP_AUTHDOMAIN )
+
         console.log("props",this.props)
 
         const { products } = this.state

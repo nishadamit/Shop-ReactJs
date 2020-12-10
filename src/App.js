@@ -7,6 +7,7 @@ import HomeComponent from './Components/HomeComponents';
 import LoginForm from './Components/Loginform';
 import Cart from './Components/Cart';
 import Footer from './Components/Footer';
+import SignUpForm from './Components/SignUpForm';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
                 <Switch>
                   <Route exact path ='/' component={ HomeComponent } />
                   <Route exact path = '/login' component={ LoginForm } />
+                  <Route exact path = '/signup' component={ SignUpForm } />
                   <Route exact path = '/cart' component={ Cart } />
                   <Redirect to="/" />
                 </Switch>
