@@ -18,7 +18,7 @@ class Cart extends Component {
 
         //   const { products } = this.state;
 
-          console.log("this props",this.props)
+        //   console.log("this props",this.props)
 
         if(this.props.products.productInCart.length !== 0 ){
             return(

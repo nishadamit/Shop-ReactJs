@@ -56,3 +56,10 @@
     justify-content: center;
     flex-direction: column;
 }
+.navbar-link{
+    margin-left: 80%;
+}
+.link{
+    color: white;
+    margin-left: 10px;
+}

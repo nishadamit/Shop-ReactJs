@@ -23,9 +23,9 @@ class HomeComponents extends Component {
     render() {
         // console.log("products",this.state.products)
 
-        console.log("env file",process.env.REACT_APP_AUTHDOMAIN )
+        // console.log("env file",process.env.REACT_APP_AUTHDOMAIN )
 
-        console.log("props",this.props)
+        // console.log("props",this.props)
 
         const { products } = this.state
         if(products.length !==0 ){
@@ -70,7 +70,7 @@ class HomeComponents extends Component {
     }
 
 const mapStateToProps = (state) =>{
-    console.log("state gggg",state)
+    // console.log("state gggg",state)
     return {
 
     }

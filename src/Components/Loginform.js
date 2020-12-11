@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Container,Row,Col,Card,Button,Form} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import firebase from './firebase';
+require('firebase/auth')
+
 
 class Loginform extends Component {
 
@@ -20,18 +23,31 @@ class Loginform extends Component {
         this.setState({[e.target.name]:e.target.value})
     }
 
-    handleOnClick =() =>{
-        console.log("state in click",this.state)
+    handleOnSubmit =(e) =>{
+        e.preventDefault();
+        const { email, password } = this.state;
+     firebase
+          .auth()
+          .signInWithEmailAndPassword(email, password)
+          .then((user) => {
+            console.log("login successful",user)
+            localStorage.setItem('user', user);
+            this.props.history.push('/cart');
+          })
+          .catch((error) => {
+              console.log("error",error)
+            this.setState({ error: error });
+          });
     }
     
 
     render() {
 
-        console.log("state",this.state)
+        // console.log("state",this.state)
 
         return (
             <Container className="loginform-container" >
-                 <Form  className="loginform" >
+                 <Form  className="loginform" onSubmit={(e) =>this.handleOnSubmit(e)} >
                  <h1>Login</h1>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
